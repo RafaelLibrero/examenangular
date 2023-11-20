@@ -1,0 +1,26 @@
+<div>
+    <h1>Cubos</h1>
+    <table *ngIf="cubos" class="table table-info table-hover">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Imagen</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cubo of cubos">
+                <td>{{cubo.nombre}}</td>
+                <td>{{cubo.precio}}€</td>
+                <td><img src={{cubo.imagen}}
+                    style="height: 150px; width: auto;">
+                </td>
+                <td> 
+                    <a [routerLink]="['/detalles', cubo.idCubo]"
+                    class="btn btn-success">Detalles</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

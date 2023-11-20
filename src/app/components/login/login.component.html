@@ -1,0 +1,16 @@
+<div *ngIf="!token">
+    <form #loginForm (ngSubmit)="loguear()">
+        <label>Email</label>
+        <input type="text" class="form-control"
+        name="email" #cajaemail="ngModel" [(ngModel)]="usuario.email">
+        <label>Contraseña</label>
+        <input type="password" class="form-control"
+        name="password" #cajaemail="ngModel" [(ngModel)]="usuario.password">
+        <button class="btn btn-info">Log in</button>
+    </form>
+</div>
+<div *ngIf="token">
+    <a class="btn btn-info" [routerLink]="['/usuario']">Ver Perfil</a>
+    <a class="btn btn-success" [routerLink]="['/usuariocompras']">Ver mis compras</a>
+    <a class="btn btn-dark" [routerLink]="['/compracubo']">Realizar una compra</a>
+</div>

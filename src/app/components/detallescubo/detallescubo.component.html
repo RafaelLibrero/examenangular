@@ -1,0 +1,24 @@
+<div>
+    <div *ngIf="cubo">
+        <h1>{{cubo.nombre}}</h1>
+        <ul>
+            <li>Modelo: {{cubo.modelo}}</li>
+            <li>Marca: {{cubo.marca}}</li>
+            <li>Color: {{cubo.color}}</li>
+            <li><img src={{cubo.imagen}}
+                style="height: 300px; width: auto;">
+            </li>
+            <li>Precio: {{cubo.precio}}€</li>
+            <li>Valoracion: {{cubo.valoracion}}</li>
+        </ul>
+    </div>
+    <div *ngIf="comentarios.length">
+        <h1>Comentarios</h1>
+        <ul *ngFor="let comentario of comentarios">
+            <li>{{comentario.comentario}}</li>
+            <li>{{comentario.fechaComentario}}</li>
+        </ul>
+    </div>
+    <button class="btn btn-warning" [routerLink]="['/']">Volver</button>
+</div>
+

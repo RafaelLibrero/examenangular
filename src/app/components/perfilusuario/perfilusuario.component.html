@@ -1,0 +1,10 @@
+<div *ngIf="usuario">
+    <h1>Perfil de usuario</h1>
+    <ul>
+        <li>{{usuario.nombre}}</li>
+        <li>{{usuario.email}}</li>
+    </ul>
+    <a class="btn btn-info" [routerLink]="['/usuariocompras']">
+        Mostrar mis compras
+    </a>
+</div>
